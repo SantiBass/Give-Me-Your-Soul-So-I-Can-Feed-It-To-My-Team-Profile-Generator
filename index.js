@@ -1,11 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Employees = ('./lib/Employees.js');
-const Manager = ('./lib/Manager.js');
-const Intern = ('./lib/Intern');
-const Egineer = ('./lib/Engeneer');
-const infoAboutEmployees = [];
-const generateHTML = ('./generateHTML.js')
+// const Employees = ('./lib/Employees.js');
+// const Manager = ('./lib/Manager.js');
+// const Intern = ('./lib/Intern');
+// const Egineer = ('./lib/Engeneer');
+// const infoAboutEmployees = [];
+// const generateHTML = ('./generateHTML.js')
 
 // console.log(Egineer)  
 // questionire
@@ -27,6 +27,13 @@ const quiestions = [
         message:    "What is your job tille",
         name: 'jobTitle',
         choices: ["Manager", "Engeneer", "Intern"],
+        
+    },
+    {
+        type:   'input',
+        message:    "question here",
+        name: 'question1',
+      
     },
     {
         type:   'input',
@@ -41,16 +48,41 @@ const quiestions = [
     },
     {
         type:   'input',
-        message:    "",
-        name: ''
+        message:    "what is your manager office number ?",
+        name: 'question2'
         
     },
     {
-        type:   '',
-        message:    "",
-        name: ''
+        type:   'input',
+        message:    "question",
+        name: 'question3',
+      
+    },
+    {
+        type:   'list',
+        message:    "Do you have another entry to do ?",
+        name: 'yesNoAdd',
+        choices: ["Yes","NO"]
+        
     },
 
 
 
-]; console.log(quiestions)
+]; 
+inquirer.prompt(quiestions)
+
+
+// function init(){
+//     inquirer.prompt(quiestions)
+//     .then((data) => {
+//          addingInfo(data);
+//          if (data.yesNoAdd === "Yes"){
+//              init();
+//          }else{
+//              fs.writeFile()
+//          }
+  
+//     })
+// }
+// function addingInfo(){}
+// init();
