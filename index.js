@@ -5,7 +5,7 @@ const fs = require('fs');
 // const Intern = ('./lib/Intern');
 // const Egineer = ('./lib/Engeneer');
 // const infoAboutEmployees = [];
- const generateHTML = require('./generateHTML.')
+ const generateHTML = require('./generateHTML')
 
 // console.log(Egineer)  
 // questionire
