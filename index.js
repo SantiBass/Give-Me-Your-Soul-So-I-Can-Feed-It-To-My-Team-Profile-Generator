@@ -9,7 +9,7 @@ const fs = require('fs');
 
 // console.log(Egineer)  
 // questionire
-const quiestions = [
+const questions = [
   
     { 
    // name input for team members 
@@ -31,25 +31,8 @@ const quiestions = [
     },
     {
         type:   'input',
-        message:    "question here",
-        name: 'question1',
-      
-    },
-    {
-        type:   'input',
         message:    "What is your email ?",
         name: 'email',
-        
-    },
-    {   
-        type:   'input',
-        message:    "What is your GitHub",
-        name: 'github',
-    },
-    {
-        type:   'input',
-        message:    "what is your manager office number ?",
-        name: 'question2'
         
     },
     {
@@ -58,18 +41,53 @@ const quiestions = [
         name: 'question3',
       
     },
+]; 
+inquirer.prompt(questions).then = (answers) => {
+if (answers.jobTitle == 'Manager'){
+    inquirer.prompt([
+        {
+        type:   'list',
+        message:    "Do you have another entry to do ?",
+        name: 'yesNoAdd',
+        choices: ["Yes","NO"]
+    }
+])
+}
+if (answers.jobTitle == 'Engeneer'){
+inquirer.prompt([
+    
+    {   
+        type:   'input',
+        message:    "What is your GitHub",
+        name: 'github',
+    },
     {
         type:   'list',
         message:    "Do you have another entry to do ?",
         name: 'yesNoAdd',
         choices: ["Yes","NO"]
+    }
+    
+])
+}
+if (answers.jobTitle == 'Intern'){
+    inquirer.prompt([
+    
+        {   
+            type:   'input',
+            message:    "What University did/do you attend?",
+            name: 'github',
+        },
+        {
+            type:   'list',
+            message:    "Do you have another entry to do ?",
+            name: 'yesNoAdd',
+            choices: ["Yes","NO"]
+        }
         
-    },
-
-
-
-]; 
-inquirer.prompt(quiestions)
+    ])
+}
+}
 
 
 // function init(){
