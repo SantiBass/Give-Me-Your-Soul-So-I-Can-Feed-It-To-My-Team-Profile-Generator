@@ -5,7 +5,7 @@ const fs = require('fs');
 // const Intern = ('./lib/Intern');
 // const Egineer = ('./lib/Engeneer');
 // const infoAboutEmployees = [];
-// const generateHTML = ('./generateHTML.js')
+ const generateHTML = require('./generateHTML.')
 
 // console.log(Egineer)  
 // questionire
@@ -23,29 +23,32 @@ const questions = [
         name: 'ID'
     },
     {
-        type:   'list',
-        message:    "What is your job tille",
-        name: 'jobTitle',
-        choices: ["Manager", "Engeneer", "Intern"],
-        
-    },
-    {
         type:   'input',
         message:    "What is your email ?",
         name: 'email',
         
     },
     {
-        type:   'input',
-        message:    "question",
-        name: 'question3',
-      
+        type:   'list',
+        message:    "What is your job tille",
+        name: 'jobTitle',
+        choices: ["Manager", "Engeneer", "Intern"],
+        
     },
+    
+   
 ]; 
 inquirer.prompt(questions).then = (answers) => {
 if (answers.jobTitle == 'Manager'){
     inquirer.prompt([
         {
+            type:   'input',
+            message:    "What is your office number",
+            name: 'officeNumber',
+          
+        },
+        {
+            
         type:   'list',
         message:    "Do you have another entry to do ?",
         name: 'yesNoAdd',
@@ -59,7 +62,7 @@ inquirer.prompt([
     {   
         type:   'input',
         message:    "What is your GitHub",
-        name: 'github',
+        name: 'gitHub',
     },
     {
         type:   'list',
@@ -76,7 +79,7 @@ if (answers.jobTitle == 'Intern'){
         {   
             type:   'input',
             message:    "What University did/do you attend?",
-            name: 'github',
+            name: 'school',
         },
         {
             type:   'list',
@@ -88,8 +91,24 @@ if (answers.jobTitle == 'Intern'){
     ])
 }
 }
+// TODO: Create a function to write  file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => err? console.log(err) : console.log("Your HTML was successfuly created!")
+    )}
 
+// TODO: Create a function to initialize app
+function init() {
+   inquirer.prompt(questions)
+   .then(data => {
+   const indexHtml = generateHTML.genrateTeamHtml(data);
+   writeToFile("index1.html", indexHtml ) 
 
+   
+   });
+   
+
+};
+init();
 // function init(){
 //     inquirer.prompt(quiestions)
 //     .then((data) => {
