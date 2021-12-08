@@ -1,82 +1,72 @@
 //making global functions...
-// const inquirer = require('inquirer');
-function managerCard(role) {
-   if(role === "Manager"){
-            
-            return `
-            <div class="card" style="width: 18rem;">
+const inquirer = require('inquirer');
+function managerCard(data) {
+    var html = ""
+    for (var entry of data) {
+        html += `<div class="card" style="width: 18rem;">
             
                 <div class=" bg-primary card-body text-white">
-                <h4 >${data.name}</h4>
+                <h4 >${entry.getName()}</h4>
                 <h4 class=" bg-primary text-white"><i class="fas fa-mug-hot  "></i>  
-                ${data.role}</h4>
+                ${entry.getRole()}</h4>
                 <p class="card-text"></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item  ID" >ID number: ${data.ID}</li>
-                <li class="list-group-item email" > Email: ${data.email}</li>
-                <li class="list-group-item " >Office number:  ${data.officeNumber}</li>
+                <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
+                <li class="list-group-item email" > Email: ${entry.getEmail()}</li>
+                <li class="list-group-item " >Office number:  ${entry.getOfficeNumber()}</li>
                 </ul>
-            </div>
-            `
-        }
-            else{
-         
-    
-        return "";
+            </div>`
     }
+    return html;
 }
+function engineerCard(data) {
+    var html = "";
+    for (var entry of data) {
+        html += `<div class="card" style="width: 18rem;">
+                <div class=" bg-primary card-body text-white">
+                <h4>${entry.getName()} </h4>
+                <h4 class="card-title text-white"><i class="fas fa-glasses"></i> ${entry.getRole()}</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
+                <li class="list-group-item email" > Email: ${entry.getEmail()}</li>
+                <li class="list-group-item">GitHub: <a href="https://github.com/">github.com/${entry.getGitHub()}</a></li>
+                </ul>
+            </div>`
+    }
+    return html;
 
-function engineerCard(role) {
-    if(role === "Engeneer"){
-
-    return `
-  <div class="card" style="width: 18rem;">
-     <div class=" bg-primary card-body text-white">
-      <h4>${data.name} </h4>
-      <h4 class="card-title text-white"><i class="fas fa-glasses"></i> ${data.role}</h4>
-   </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item  ID" >ID number: ${data.ID}</li>
-      <li class="list-group-item email" > Email: ${data.email}</li>
-      <li class="list-group-item">GitHub: <a href="https://github.com/">github.com/${data.gitHub}</a></li>
-    </ul>
-   </div>`
-}else {
-      return "";
-  }
 
 };
-function internCard(role) {
-   if(role === "Intern"){
-    
-    return `
-    
-    <div class="card" style="width: 18rem;">
+function internCard(data) {
+    var html = "";
+
+    for (var entry of data) {
+        html += `<div class="card" style="width: 18rem;">
        <div class="bg-primary card-body text-white">
-       <h4 > ${data.name} </h4>
+       <h4 > ${entry.getName()} </h4>
        <h4 class="card-title text-white"><i class="fas fa-user-graduate"></i>    Intern</h4>
       </div>
             <ul class="list-group list-group-flush">
-             <li class="list-group-item  ID" >ID number: ${data.ID}</li>
-             <li class="list-group-item email" > Email: ${data.email}</li>
-             <li class="list-group-item" id="school">School:  ${data.school}</li>
+             <li class="list-group-item  ID" >ID number: ${entry.getid()}</li>
+             <li class="list-group-item email" > Email: ${entry.getEmail()}</li>
+             <li class="list-group-item" id="school">School:  ${entry.getSchool()}</li>
             </ul>
-     </div>
+     </div>`
+    }
+    return html;
 
-    `
-   } else{
-       return "";
-   }
 
-      
-    
 }
 
-    function genrateTeamHtml(data) {
+function genrateTeamHtml(data) {
+    var managers = data.filter(item => item.getRole() == "Manager")
+    var engenreers = data.filter(item => item.getRole() == "Engeneer")
+    var interns = data.filter(item => item.getRole() == "Intern")
 
-     
-        return `
+    console.log(managers)
+    return `
             <!DOCTYPE html>
             <html lang="en">
             <head>
@@ -101,9 +91,9 @@ function internCard(role) {
             
             <div class="container d-flex justify-content-between bg-white">
            
-            ${managerCard(data)}
-            ${internCard()}
-            ${engineerCard()}
+            ${managerCard(managers)}
+            ${engineerCard(engenreers)}
+            ${internCard(interns)}
             </div>
 
 
@@ -116,6 +106,6 @@ function internCard(role) {
             </body>
             </html>
             `
-    }
+}
 
-    module.exports = {genrateTeamHtml }
+module.exports = { genrateTeamHtml }
