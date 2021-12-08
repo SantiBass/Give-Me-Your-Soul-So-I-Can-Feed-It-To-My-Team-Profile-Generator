@@ -101,7 +101,7 @@ function internCard(role) {
             
             <div class="container d-flex justify-content-between bg-white">
            
-            ${managerCard()}
+            ${managerCard(data)}
             ${internCard()}
             ${engineerCard()}
             </div>

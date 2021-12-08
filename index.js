@@ -6,6 +6,7 @@ const infoAboutEmployees = [];
 const generateHTML = require('./generateHTML');
 const Engeneer = require('./lib/Engeneer');
 
+
 // console.log(Egineer)  
 // questionire
 const questions = [
@@ -54,10 +55,10 @@ const questions = [
     },
     
 ]; 
-console.log(questions)
+
 
 // TODO: Create a function to write  file
-function writeToFile(fileName, data) {
+function writeToFile(fileName, data) {console.log(questions.role)
 
     fs.writeFile(fileName, data, (err) => err? console.log(err) : console.log("Your HTML was successfuly created!")
     )}
