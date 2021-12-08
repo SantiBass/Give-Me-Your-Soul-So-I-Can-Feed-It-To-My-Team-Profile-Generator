@@ -1,18 +1,24 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const Employees = ('./lib/Employees.js');
-// const Manager = ('./lib/Manager.js');
-// const Intern = ('./lib/Intern');
-// const Egineer = ('./lib/Engeneer');
-// const infoAboutEmployees = [];
- const generateHTML = require('./generateHTML')
+const Manager = require('./lib/Manager.js');
+const Intern = require('./lib/Intern');
+const infoAboutEmployees = [];
+const generateHTML = require('./generateHTML');
+const Engeneer = require('./lib/Engeneer');
 
 // console.log(Egineer)  
 // questionire
 const questions = [
   
+    {
+        type:   'list',
+        message:    "What is your job tiltle",
+        name: 'role',
+        choices: ["Manager", "Engeneer", "Intern"],
+        
+    },
     { 
-   // name input for team members 
+        
         type:   'input',
         message:    "Waht is the name of the employee ?",
         name: 'name'
@@ -28,71 +34,31 @@ const questions = [
         name: 'email',
         
     },
-    {
-        type:   'list',
-        message:    "What is your job tille",
-        name: 'jobTitle',
-        choices: ["Manager", "Engeneer", "Intern"],
-        
+    {when: (data) => data.role === "Manager", 
+       type:   'input',
+       message:    "What is your office number",
+       name: 'officeNumber',
+       
     },
-    
-   
-]; 
-inquirer.prompt(questions).then = (answers) => {
-if (answers.jobTitle == 'Manager'){
-    inquirer.prompt([
-        {
-            type:   'input',
-            message:    "What is your office number",
-            name: 'officeNumber',
-          
-        },
-        {
-            
-        type:   'list',
-        message:    "Do you have another entry to do ?",
-        name: 'yesNoAdd',
-        choices: ["Yes","NO"]
-    }
-])
-}
-if (answers.jobTitle == 'Engeneer'){
-inquirer.prompt([
-    
-    {   
+    {   when: (data) => data.role === "Engeneer",
         type:   'input',
         message:    "What is your GitHub",
         name: 'gitHub',
-    },
-    {
-        type:   'list',
-        message:    "Do you have another entry to do ?",
-        name: 'yesNoAdd',
-        choices: ["Yes","NO"]
-    }
-    
-])
-}
-if (answers.jobTitle == 'Intern'){
-    inquirer.prompt([
-    
-        {   
-            type:   'input',
-            message:    "What University did/do you attend?",
-            name: 'school',
-        },
-        {
-            type:   'list',
-            message:    "Do you have another entry to do ?",
-            name: 'yesNoAdd',
-            choices: ["Yes","NO"]
-        }
         
-    ])
-}
-}
+    },
+    {    when: (data) => data.role === "Intern",
+        type:   'input',
+        message:    "What University did/do you attend?",
+        name: 'school',
+       
+    },
+    
+]; 
+console.log(questions)
+
 // TODO: Create a function to write  file
 function writeToFile(fileName, data) {
+
     fs.writeFile(fileName, data, (err) => err? console.log(err) : console.log("Your HTML was successfuly created!")
     )}
 
@@ -100,26 +66,42 @@ function writeToFile(fileName, data) {
 function init() {
    inquirer.prompt(questions)
    .then(data => {
-   const indexHtml = generateHTML.genrateTeamHtml(data);
-   writeToFile("index1.html", indexHtml ) 
+       if(data.role == "Intern"){
+           const newEmployee =  new Intern(data.name, data.id, data.email, data.school)
+           infoAboutEmployees.push(newEmployee)
+        }
+       if(data.role == "Engeneer"){
+           const newEmployee =  new Engeneer(data.name, data.id, data.email, data.github)
+           infoAboutEmployees.push(newEmployee)
+        }
+       if(data.role == "Manager"){
+           const newEmployee =  new Manager(data.name, data.id, data.email, data.officeNumber)
+           infoAboutEmployees.push(newEmployee)
+        }
+        inquirer.prompt({
+            
+                
+                type:   'list',
+                message:    "Do you have another entry to do ?",
+                name: 'yesNoAdd',
+                choices: ["Yes","NO"]
+            
+           
+        }).then(addMore => {
+            if(addMore.yesNoAdd == "Yes"){
+                 init();
+            }
+            else{
+                writeToFile("index1.html", indexHtml ) 
+            }
+        })
+        
+  
 
    
+        const indexHtml = generateHTML.genrateTeamHtml(infoAboutEmployees);
    });
    
 
-};
+ }; 
 init();
-// function init(){
-//     inquirer.prompt(quiestions)
-//     .then((data) => {
-//          addingInfo(data);
-//          if (data.yesNoAdd === "Yes"){
-//              init();
-//          }else{
-//              fs.writeFile()
-//          }
-  
-//     })
-// }
-// function addingInfo(){}
-// init();
