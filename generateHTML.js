@@ -13,7 +13,7 @@ function managerCard(data) {
                 </div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
-                <li class="list-group-item email" > Email:  <a href="mailto:${entry.getEmail()}">${entry.getEmail()}</li>
+                <li class="list-group-item email" > Email:   <a href="mailto:${entry.getEmail()}">${entry.getEmail()}</a></li>
                 <li class="list-group-item " >Office number:  ${entry.getOfficeNumber()}</li>
                 </ul>
             </div>`
@@ -31,7 +31,8 @@ function engineerCard(data) {
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
                 <li class="list-group-item email" > Email:   <a href="mailto:${entry.getEmail()}">${entry.getEmail()}</a></li>
-                <li class="list-group-item">GitHub:<a href="https://github.com/"${entry.getGitHub()}</a>github.com/${entry.getGitHub()}</li>
+                <li class="list-group-item">GitHub: <a href="https://www.github.com/${entry.getGitHub()}" target="_blank" rel="noopener noreferrer">github${entry.getGitHub()}</a></li>
+                
                 </ul>
             </div>`
             // console.log("git"+ entry.getGitHub())

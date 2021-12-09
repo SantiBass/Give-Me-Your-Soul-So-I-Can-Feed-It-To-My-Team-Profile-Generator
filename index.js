@@ -58,7 +58,7 @@ const questions = [
 
 
 // TODO: Create a function to write  file
-function writeToFile(fileName, data) {console.log(questions.role)
+function writeToFile(fileName, data) {
 
     fs.writeFile(fileName, data, (err) => err? console.log(err) : console.log("Your HTML was successfuly created!")
     )}
