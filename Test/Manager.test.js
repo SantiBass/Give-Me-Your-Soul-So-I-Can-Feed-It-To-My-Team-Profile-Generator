@@ -27,4 +27,5 @@ test("Can set office number via constructor argument", () =>{
     const testValue = "1234";
     const e = new Manager("Foo", 1, "email", testValue);
     expect(e.officeNumber).toBe(testValue);
+
 })

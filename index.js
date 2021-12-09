@@ -21,13 +21,13 @@ const questions = [
     { 
         
         type:   'input',
-        message:    "Waht is the name of the employee ?",
+        message:    "What is the name of the employee ?",
         name: 'name'
     },
     {
         type:   'input',
         message:    "What is your employee ID number ?",
-        name: 'ID'
+        name: 'id'
     },
     {
         type:   'input',
@@ -44,7 +44,7 @@ const questions = [
     {   when: (data) => data.role === "Engeneer",
         type:   'input',
         message:    "What is your GitHub",
-        name: 'gitHub',
+        name: 'github',
         
     },
     {    when: (data) => data.role === "Intern",

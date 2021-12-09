@@ -13,7 +13,7 @@ function managerCard(data) {
                 </div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
-                <li class="list-group-item email" > Email: ${entry.getEmail()}</li>
+                <li class="list-group-item email" > Email:  <a href="mailto:${entry.getEmail()}">${entry.getEmail()}</li>
                 <li class="list-group-item " >Office number:  ${entry.getOfficeNumber()}</li>
                 </ul>
             </div>`
@@ -30,10 +30,11 @@ function engineerCard(data) {
                 </div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
-                <li class="list-group-item email" > Email: ${entry.getEmail()}</li>
-                <li class="list-group-item">GitHub: <a href="https://github.com/">github.com/${entry.getGitHub()}</a></li>
+                <li class="list-group-item email" > Email:   <a href="mailto:${entry.getEmail()}">${entry.getEmail()}</a></li>
+                <li class="list-group-item">GitHub:  <a href="https://github.com/${entry.getGitHub()}</a></li>
                 </ul>
             </div>`
+            console.log(entry.getEmail())
     }
     return html;
 
@@ -49,8 +50,8 @@ function internCard(data) {
        <h4 class="card-title text-white"><i class="fas fa-user-graduate"></i>    Intern</h4>
       </div>
             <ul class="list-group list-group-flush">
-             <li class="list-group-item  ID" >ID number: ${entry.getid()}</li>
-             <li class="list-group-item email" > Email: ${entry.getEmail()}</li>
+             <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
+             <li class="list-group-item email" > Email: <a href="mailto:">${entry.getEmail()}</li>
              <li class="list-group-item" id="school">School:  ${entry.getSchool()}</li>
             </ul>
      </div>`
@@ -65,7 +66,7 @@ function genrateTeamHtml(data) {
     var engenreers = data.filter(item => item.getRole() == "Engeneer")
     var interns = data.filter(item => item.getRole() == "Intern")
 
-    console.log(managers)
+   //console.log(managers)
     return `
             <!DOCTYPE html>
             <html lang="en">
@@ -85,7 +86,7 @@ function genrateTeamHtml(data) {
             <body>
             <header>
             <div class = "jumbotron bg-danger text-center text-blue">
-                <h1 class="text-white">  Team </h1>
+                <h1 class="text-white text-decoration-underline"><i class="bi bi-folder-plus"></i>    Team   <i class="bi bi-building"></i> </h1>
             </div>
             </header>
             
