@@ -31,10 +31,10 @@ function engineerCard(data) {
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
                 <li class="list-group-item email" > Email:   <a href="mailto:${entry.getEmail()}">${entry.getEmail()}</a></li>
-                <li class="list-group-item">GitHub:  <a href="https://github.com/${entry.getGitHub()}</a></li>
+                <li class="list-group-item">GitHub:" ${entry.getGitHub} "<a href="https://github.com/"${entry.getGitHub()}</a>github.com/${entry.getGitHub()}</li>
                 </ul>
             </div>`
-            console.log(entry.getEmail())
+            // console.log("git"+ entry.getGitHub())
     }
     return html;
 
