@@ -93,7 +93,7 @@ function init() {
                  init();
             }
             else{
-                writeToFile("index1.html", indexHtml ) 
+                writeToFile("./output/index.html", indexHtml ) 
             }
         })
         
