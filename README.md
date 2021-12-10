@@ -55,7 +55,6 @@
 
 
 ### If you have any questions, please send me an email @ sibarraryan@gmail.com. 
-### Also, you can watch this video about this application by clicking this (link here)
+### Also, you can watch this video about this application by clicking this (link coming soon!)
 
 
-![ teamGenerator.png]()
