@@ -3,9 +3,9 @@ const inquirer = require('inquirer');
 function managerCard(data) {
     var html = ""
     for (var entry of data) {
-        html += `<div class="card" style="width: 18rem;">
-            
-                <div class=" bg-primary card-body text-white">
+    html += 
+            `<div class="card m-4 pb-2" style="width: 18rem;">
+                <div class=" bg-primary card-header  text-white">
                 <h4 >${entry.getName()}</h4>
                 <h4 class=" bg-primary text-white"><i class="fas fa-mug-hot  "></i>  
                 ${entry.getRole()}</h4>
@@ -17,14 +17,16 @@ function managerCard(data) {
                 <li class="list-group-item " >Office number:  ${entry.getOfficeNumber()}</li>
                 </ul>
             </div>`
+            
     }
     return html;
 }
 function engineerCard(data) {
     var html = "";
     for (var entry of data) {
-        html += `<div class="card" style="width: 18rem;">
-                <div class=" bg-primary card-body text-white">
+        html += `
+            <div class="card m-4 pb-2" style="width: 18rem;">
+                <div class=" bg-primary card-header  text-white">
                 <h4>${entry.getName()} </h4>
                 <h4 class="card-title text-white"><i class="fas fa-glasses"></i> ${entry.getRole()}</h4>
                 </div>
@@ -35,6 +37,7 @@ function engineerCard(data) {
                 
                 </ul>
             </div>`
+
             // console.log("git"+ entry.getGitHub())
     }
     return html;
@@ -45,20 +48,20 @@ function internCard(data) {
     var html = "";
 
     for (var entry of data) {
-        html += `<div class="card" style="width: 18rem;">
-       <div class="bg-primary card-body text-white">
+        html += `<div class="card m-4 pb-2" style="width: 18rem;">
+        <div class=" bg-primary card-header  text-white">
        <h4 > ${entry.getName()} </h4>
-       <h4 class="card-title text-white"><i class="fas fa-user-graduate"></i>    Intern</h4>
+       <h4 class="card-title text-white"><i class="fas fa-user-graduate"></i> ${entry.getRole()}</h4>
       </div>
             <ul class="list-group list-group-flush">
              <li class="list-group-item  ID" >ID number: ${entry.getId()}</li>
-             <li class="list-group-item email" > Email: <a href="mailto:">${entry.getEmail()}</li>
-             <li class="list-group-item" id="school">School:  ${entry.getSchool()}</li>
+             <li class="list-group-item email" > Email: <a href="mailto:">${entry.getEmail()}</a></li>
+             <li class="list-group-item">School:  ${entry.getSchool()}</li>
             </ul>
-     </div>`
+      </div>`
+
     }
     return html;
-
 
 }
 
@@ -91,14 +94,15 @@ function genrateTeamHtml(data) {
             </div>
             </header>
             
-            <div class="container d-flex justify-content-between bg-white">
+            <content class="container d-flex flex-wrap align-items-center justify-content-center">
            
             ${managerCard(managers)}
             ${engineerCard(engenreers)}
             ${internCard(interns)}
-            </div>
+           
 
 
+            </content>
 
 
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
