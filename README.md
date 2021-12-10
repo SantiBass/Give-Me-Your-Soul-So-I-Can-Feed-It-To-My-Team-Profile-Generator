@@ -58,3 +58,4 @@
 ### Also, you can watch this video about this application by clicking this (link coming soon!)
 
 
+![ teamGenerator](https://user-images.githubusercontent.com/90415841/145650810-519e8a4c-c4ce-49ff-97dc-28d3ac62356d.png)
