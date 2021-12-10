@@ -5,13 +5,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description.
-### The purpose of this application is to create an HTML file with members of a team, with their respective occupations. 
-### The main feature of this project is the use of the command line. It can be achieved by using Node.js.  
-### To use this application, it must be invoked by typing in "node index.js". 
-### After that, the program starts and it prompts three options, which are: 1. Manager, 2. Engineer, and 3. Intern. 
-### When one of these options is selected (e.g. Manager), the user will be prompted to enter their name, 
-### ID number, email, and office number. After that, the user will be prompted if he or she would like to make another team entry.
-### Then, if the selected option is No, the program will prompt a message saying that the HTML has been generated and the program will end. 
+#### The purpose of this application is to create an HTML file with members of a team, with their respective occupations. 
+#### The main feature of this project is the use of the command line. It can be achieved by using Node.js.  
+#### To use this application, it must be invoked by typing in "node index.js". 
+#### After that, the program starts and it prompts three options, which are: 1. Manager, 2. Engineer, and 3. Intern. 
+#### When one of these options is selected (e.g. Manager), the user will be prompted to enter their name, 
+#### ID number, email, and office number. After that, the user will be prompted if he or she would like to make another team entry.
+#### Then, if the selected option is No, the program will prompt a message saying that the HTML has been generated and the program will end. 
 
 
 
