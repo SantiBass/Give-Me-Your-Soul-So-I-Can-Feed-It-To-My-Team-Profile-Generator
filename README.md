@@ -16,15 +16,14 @@
 
 
 
-* [Instalation](#instalation)
+* [Installation](#installation)
 * [License](#license)
 * [Usage](#usage)
 * [Test](#test)
 * [GitHub](#github)
 * [Questions](#instalation)
-* [Instalation](#instalation)
 
-## Intallation
+## Installation
 #### To run this application via command line [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [Jest](https://jestjs.io/docs/getting-started) have to be installed 
 ## License
 #### This project is licensed by:  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
