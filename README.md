@@ -1,4 +1,4 @@
-# Give-Me-Your-Soul-So-I-Can-Feed-It-To-My-Team-Profile-Generator
+# Give Me Your Soul So I Can Feed It To My Team Profile Generator.
 
 
 
@@ -54,7 +54,7 @@
 
 
 ### If you have any questions, please send me an email @ sibarraryan@gmail.com. 
-### Also, you can watch this video about this application by clicking this (link coming soon!)
+### Also, you can watch this video about this application by clicking this [Give Me Your Soul So I Can Feed It To My Team Profile Generator Video.](https://drive.google.com/file/d/1vo-Hx5cxpQKGpyVcTJW_1uzwe-WTwwqi/view)
 
 
 ![ teamGenerator](https://user-images.githubusercontent.com/90415841/145650810-519e8a4c-c4ce-49ff-97dc-28d3ac62356d.png)
