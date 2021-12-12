@@ -25,9 +25,9 @@
 * [Instalation](#instalation)
 
 ## Intallation
-### To run this application via command line [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [Jest](https://jestjs.io/docs/getting-started) have to be installed 
+#### To run this application via command line [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [Jest](https://jestjs.io/docs/getting-started) have to be installed 
 ## License
-### This project is licensed by:  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+#### This project is licensed by:  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### You can find information about MIT license here: [MIT License.](https://choosealicense.com/licenses/mit/)
 
