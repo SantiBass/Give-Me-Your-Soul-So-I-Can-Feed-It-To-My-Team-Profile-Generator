@@ -21,7 +21,7 @@
 * [Usage](#usage)
 * [Test](#test)
 * [GitHub](#github)
-* [Questions](#instalation)
+* [Questions](#questions)
 
 ## Installation
 #### To run this application via command line [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [Jest](https://jestjs.io/docs/getting-started) have to be installed 
